@@ -1,36 +1,65 @@
-# Solar System
+# 🌌 Solar System Website
 
-## Introduction
-This project is a website that displays the solar system. It was developed as part of a coursework at my university to learn web development techniques.
+A simple website about planets in our solar system. Made for my university project.
 
-## Requirements
+## 🔴 Live Website
+You can see the website here: [Solar System Website](https://liwa-dev.github.io/solar-system-university-project)
+
+## 📱 What You Can Do
+- Learn about planets
+- See nice pictures
+- Fill out a contact form
+- Works on phones and computers
+
+## 🛠️ What I Used
 - HTML5
 - CSS3
 - Bootstrap 5
 
-## Versions
-### Version 1: HTML5 Only
-- A simple website using only HTML5.
+## 📝 Project Steps
 
-### Version 2: Adding a Form
-- Added an HTML form to the website.
+1. First Version
+   - Made basic website with HTML
 
-### Version 3: Adding CSS
-- Styled the website using CSS.
+2. Second Version
+   - Added contact form
 
-### Version 4: Integrating Bootstrap 5
-- Used Bootstrap 5 to enhance the website's design.
+3. Third Version
+   - Made it look nice with CSS
 
-### Version 5: SEO Techniques
-- Applied search engine optimization techniques.
+4. Fourth Version
+   - Added Bootstrap to make it better
 
-## How to Run
-1. Download or clone the project from GitHub.
-2. Open the `index.html` file in a web browser.
+5. Fifth Version
+   - Made it better for Google search
 
-## Project Deployment
-The project is deployed on GitHub Pages and can be accessed via the following link:
-[GitHub Pages Link](https://USERNAME.github.io/REPOSITORY)
+## ⚡ How to Use
 
-## Author
-- Liwa Hadhri
+1. Get the files:
+   ```
+   git clone https://github.com/liwa-dev/solar-system-university-project.git
+   ```
+
+2. Open `index.html` in your web browser
+
+## 📱 Works On
+- Big computers
+- Laptops
+- Tablets
+- Phones
+
+## 👤 Made By
+Liwa Hadhri
+
+## ✨ Want to Help?
+If you want to help make this better:
+1. Copy the project to your account
+2. Make your changes
+3. Send them to me
+
+## 📞 Questions?
+- Use the contact form on the website
+- Write to me on GitHub
+
+---
+Made with ❤️ by Liwa
