@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>النظام الشمسي - جميع الإصدارات</title>
+    <title>🌍 Le Système Solaire 🚀</title>
     <style>
         body {
             margin: 0;
@@ -278,7 +278,85 @@
                 opacity: 0;
             }
         }
+
+        /* New title animation styles */
+        .fancy-title {
+            text-align: center;
+            font-size: 3.5rem;
+            margin: 2rem 0;
+            position: relative;
+            animation: titleFloat 3s ease-in-out infinite;
+        }
+
+        .emoji {
+            display: inline-block;
+            animation: spin 4s linear infinite;
+            margin: 0 10px;
+            font-size: 3rem;
+        }
+
+        .title-text {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96f7d2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 300% 300%;
+            animation: gradient 4s ease infinite;
+            text-shadow: 
+                0 0 10px rgba(255,255,255,0.2),
+                0 0 20px rgba(255,255,255,0.2),
+                0 0 30px rgba(255,255,255,0.2);
+        }
+
+        @keyframes titleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Add new style for title animation */
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .typewriter-cursor {
+            color: #fff;
+            animation: blink 1s infinite;
+            font-weight: bold;
+        }
     </style>
+    <script>
+        function rotatePlanets() {
+            const planets = ['🌍', '🌎', '🌏', '🪐', '🌠', '🚀', '✨', '⭐'];
+            let position = 0;
+            
+            setInterval(() => {
+                position = (position + 1) % planets.length;
+                const titleEmojis = [
+                    planets[(position) % planets.length],
+                    planets[(position + 1) % planets.length],
+                    "Le Système Solaire",
+                    planets[(position + 2) % planets.length],
+                    planets[(position + 3) % planets.length]
+                ].join(' ');
+                document.title = titleEmojis;
+            }, 500); // Change emojis every 500ms
+        }
+        
+        // Start the rotation when page loads
+        window.onload = rotatePlanets;
+    </script>
 </head>
 <body>
     <div class="space-wrapper">
@@ -296,7 +374,12 @@
         <img src="earth.png" alt="Earth" class="earth">
     </div>
 
-    <h1>Système Solaire</h1>
+    <h1 class="fancy-title">
+        <span class="emoji">🌟</span>
+        <span class="title-text">Notre Voyage Scolaire</span>
+        <span class="emoji">🚀</span>
+    </h1>
+
     <div class="versions">
         <a href="version1.html" class="version-link">
             <span class="version-number">1</span>
