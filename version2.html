@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>النظام الشمسي</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" style="text-decoration: none; color: inherit;">
+            <h1>النظام الشمسي</h1>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#intro">مقدمة</a></li>
+                <li><a href="#planets">الكواكب</a></li>
+                <li><a href="#facts">حقائق مثيرة</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="intro">
+            <h2>نظرة عامة</h2>
+            <p>النظام الشمسي هو النظام الكوكبي الذي تقع فيه الأرض. يتكون من الشمس وجميع الأجرام السماوية التي تدور حولها.</p>
+        </section>
+
+        <section id="planets">
+            <h2>الكواكب</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>الكوكب</th>
+                        <th>البعد عن الشمس</th>
+                        <th colspan="2">الخصائص الرئيسية</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>عطارد</td>
+                        <td>57.9 مليون كم</td>
+                        <td colspan="2">أقرب كوكب إلى الشمس وأصغر الكواكب</td>
+                    </tr>
+                    <tr>
+                        <td>الزهرة</td>
+                        <td>108.2 مليون كم</td>
+                        <td colspan="2">ثاني أكثر الكواكب سخونة</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">الأرض</td>
+                        <td>149.6 مليون كم</td>
+                        <td>الكوكب الوحيد المعروف بوجود حياة عليه</td>
+                        <td>يحتوي على قمر واحد</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <section id="planets-cards">
+                <div>
+                    <div>
+                        <img src="imgs/عطارد.webp" alt="كوكب عطارد" width="200">
+                        <h3>عطارد</h3>
+                        <p>أقرب كوكب إلى الشمس ويمتاز بحجمه الصغير وسرعته الكبيرة في مداره.</p>
+                    </div>
+                    <div>
+                        <img src="imgs/الزهرة.jpeg" alt="كوكب الزهرة" width="200">
+                        <h3>الزهرة</h3>
+                        <p>يعتبر الكوكب الأكثر سخونة في المجموعة الشمسية بسبب غلافه الجوي الكثيف.</p>
+                    </div>
+                    <div>
+                        <img src="imgs/الارض.jpg" alt="كوكب ال��رض" width="200">
+                        <h3>الأرض</h3>
+                        <p>الكوكب الوحيد المعروف بوجود الحياة عليه ويحتوي على محيطات وأجواء متنوعة.</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section id="planets-cards">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>الكوكب</th>
+                        <th>البعد عن الشمس</th>
+                        <th colspan="2">الخصائص الرئيسية</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>عطارد</td>
+                        <td>57.9 مليون كم</td>
+                        <td colspan="2">أقرب كوكب إلى الشمس وأصغر الكواكب</td>
+                    </tr>
+                    <tr>
+                        <td>الزهرة</td>
+                        <td>108.2 مليون كم</td>
+                        <td colspan="2">ثاني أكثر الكواكب سخونة</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">الأرض</td>
+                        <td>149.6 مليون كم</td>
+                        <td>الكوكب الوحيد المعروف بوجود حياة عليه</td>
+                        <td>يحتوي على قمر واحد</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="facts">
+            <h2>حقائق مثيرة</h2>
+            <aside>
+                <h3>هل تعلم؟</h3>
+                <p>يمكن أن تحتوي حلقات زحل على جزيئات من الماء المتجمد!</p>
+            </aside>
+        </section>
+    </main>
+
+    <section id="contact">
+        <h2>اتصل بنا</h2>
+        <form action="#" method="POST">
+            <div>
+                <label for="name">الاسم:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div>
+                <label for="email">البريد الإلكتروني:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div>
+                <label for="favorite-planet">الكوكب المفضل:</label>
+                <select id="favorite-planet" name="favorite-planet" required>
+                    <option value="">اختر كوكباً</option>
+                    <option value="mercury">عطارد</option>
+                    <option value="venus">الزهرة</option>
+                    <option value="earth">الأرض</option>
+                </select>
+            </div>
+
+            <div>
+                <p>مجال الاهتمام:</p>
+                <input type="checkbox" id="planets" name="interest" value="planets">
+                <label for="planets">الكواكب</label>
+
+                <input type="checkbox" id="stars" name="interest" value="stars">
+                <label for="stars">النجوم</label>
+
+                <input type="checkbox" id="galaxies" name="interest" value="galaxies">
+                <label for="galaxies">المجرات</label>
+            </div>
+
+            <div>
+                <label for="message">رسالتك:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+
+            <button type="submit">إرسال</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © 2024 النظام الشمسي</p>
+    </footer>
+</body>
+</html>

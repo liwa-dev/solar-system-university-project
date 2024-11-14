@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>النظام الشمسي - جميع الإصدارات</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: radial-gradient(circle at center, #000000, #0a0a2a 70%);
+            font-family: Arial, sans-serif;
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .stars {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 10px 10px, white, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 30px 40px, white, rgba(0,0,0,0)),
+                radial-gradient(3px 3px at 80px 120px, white, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 120px 50px, white, rgba(0,0,0,0));
+            background-size: 200px 200px;
+            animation: stars-move 100s linear infinite;
+        }
+
+        .stars:nth-child(2) {
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, white, rgba(0,0,0,0)),
+                radial-gradient(3px 3px at 60px 80px, white, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 100px 140px, white, rgba(0,0,0,0));
+            background-size: 250px 250px;
+            animation: stars-move 150s linear infinite;
+        }
+
+        @keyframes stars-move {
+            from { background-position: 0 0; }
+            to { background-position: -400px 400px; }
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin: 2rem 0;
+            background: linear-gradient(45deg, #ffffff, #7986cb);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #7986cb; }
+            to { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #7986cb; }
+        }
+
+        .versions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .version-link {
+            position: relative;
+            background: rgba(41, 48, 161, 0.2);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            text-decoration: none;
+            color: #ffffff;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease-in-out;
+        }
+
+        .version-link::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, #1a237e, #283593);
+            border-radius: 15px;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .version-link:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .version-link:hover::before {
+            opacity: 1;
+        }
+
+        .version-link h2 {
+            font-size: 1.5rem;
+            margin: 0 0 1rem 0;
+            position: relative;
+            color: #7986cb;
+            transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1);  /* Match main transition */
+        }
+
+        .version-link:hover h2 {
+            color: #ffffff;
+        }
+
+        .version-link p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .version-number {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            font-size: 4rem;
+            opacity: 0.1;
+            font-weight: bold;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);  /* Match main transition */
+        }
+
+        .version-link:hover .version-number {
+            opacity: 0.2;
+            transform: scale(1.1);
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: linear-gradient(135deg, #3b3b3b, #1a1a2e);
+            /* border-radius: 10px; */
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(45deg, #1a237e, #7986cb);
+            border-radius: 10px;
+            border: 2px solid rgba(0, 0, 0, 0.3);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #7986cb, #1a237e);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .space-wrapper {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        .earth-container {
+            position: fixed;
+            left: 50%;
+            top: 650px;
+            width: 1200px;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .earth {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            animation: rotate 120s linear infinite;
+            /* box-shadow: 0 0 20px rgba(0, 0, 255, 0.2); */
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .shooting-star {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.8), transparent);
+            border-radius: 50%;
+            animation: shoot 6s linear infinite;
+            opacity: 0;
+        }
+
+        .shooting-star:nth-child(1) { 
+            animation-delay: 0s; 
+            top: 5%; 
+            right: -30%;
+        }
+        .shooting-star:nth-child(2) { 
+            animation-delay: 2s; 
+            top: 15%; 
+            right: -50%;
+        }
+        .shooting-star:nth-child(3) { 
+            animation-delay: 4s; 
+            top: 25%; 
+            right: -40%;
+        }
+
+        @keyframes shoot {
+            0% {
+                transform: rotate(-45deg) translateX(0);
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(-45deg) translateX(-150vw);
+                opacity: 0;
+            }
+        }
+
+        .shooting-star-left {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(270deg, rgba(255,255,255,0.8), transparent);
+            border-radius: 50%;
+            animation: shootLeft 9s linear infinite;
+            opacity: 0;
+        }
+
+        .shooting-star-left:nth-child(1) { 
+            animation-delay: 0.5s; 
+            top: 8%; 
+            left: -30%;
+        }
+        .shooting-star-left:nth-child(2) { 
+            animation-delay: 4.2s; 
+            top: 18%; 
+            left: -50%;
+        }
+        .shooting-star-left:nth-child(3) { 
+            animation-delay: 2.7s; 
+            top: 28%; 
+            left: -40%;
+        }
+
+        @keyframes shootLeft {
+            0% {
+                transform: rotate(45deg) translateX(0);
+                opacity: 0;
+            }
+            15% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: rotate(45deg) translateX(150vw);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="space-wrapper">
+        <div class="stars"></div>
+        <div class="stars"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star-left"></div>
+        <div class="shooting-star-left"></div>
+        <div class="shooting-star-left"></div>
+    </div>
+    
+    <div class="earth-container">
+        <img src="earth.png" alt="Earth" class="earth">
+    </div>
+
+    <h1>Système Solaire</h1>
+    <div class="versions">
+        <a href="version1.html" class="version-link">
+            <span class="version-number">1</span>
+            <h2>Version HTML5</h2>
+            <p>Site web en HTML5 seulement</p>
+        </a>
+        <a href="version2.html" class="version-link">
+            <span class="version-number">2</span>
+            <h2>Formulaire</h2>
+            <p>Ajout d'un formulaire</p>
+        </a>
+        <a href="version3.html" class="version-link">
+            <span class="version-number">3</span>
+            <h2>CSS</h2>
+            <p>Ajout CSS</p>
+        </a>
+        <a href="version4.html" class="version-link">
+            <span class="version-number">4</span>
+            <h2>Bootstrap</h2>
+            <p>Intégrer Bootstrap 5</p>
+        </a>
+        <a href="version5.html" class="version-link">
+            <span class="version-number">5</span>
+            <h2>Référencement</h2>
+            <p>Appliquer des techniques de référencements</p>
+        </a>
+    </div>
+</body>
+</html>
