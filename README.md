@@ -48,9 +48,6 @@ You can see the website here: [Solar System Website](https://liwa-dev.github.io/
 - Tablets
 - Phones
 
-## 👤 Made By
-Liwa Hadhri
-
 ## ✨ Want to Help?
 If you want to help make this better:
 1. Copy the project to your account
