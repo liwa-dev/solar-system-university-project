@@ -47,16 +47,5 @@ You can see the website here: [Solar System Website](https://liwa-dev.github.io/
 - Laptops
 - Tablets
 - Phones
-
-## ✨ Want to Help?
-If you want to help make this better:
-1. Copy the project to your account
-2. Make your changes
-3. Send them to me
-
-## 📞 Questions?
-- Use the contact form on the website
-- Write to me on GitHub
-
 ---
 Made with ❤️ by Liwa
